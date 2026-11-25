@@ -1,0 +1,250 @@
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px
+}
+
+.page-heading h2 {
+    font-size: 23px;
+    margin: 0 0 6px
+}
+
+.page-heading p {
+    font-size: 13px;
+    color: #8992a3;
+    margin: 0
+}
+
+.primary-button {
+    border: 0;
+    background: #5969d8;
+    color: #fff;
+    border-radius: 7px;
+    padding: 11px 16px;
+    font-size: 12px;
+    cursor: pointer
+}
+
+.toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 15px
+}
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e5e8ef;
+    border-radius: 7px;
+    padding: 0 12px;
+    flex: 1;
+    max-width: 390px;
+    color: #8992a3
+}
+
+.search-wrap input {
+    border: 0;
+    outline: 0;
+    padding: 12px;
+    width: 100%;
+    font-size: 12px
+}
+
+.toolbar select {
+    padding: 11px;
+    border: 1px solid #e5e8ef;
+    border-radius: 7px;
+    background: #fff;
+    color: #626d80;
+    font-size: 12px
+}
+
+.result-count {
+    margin-left: auto;
+    font-size: 11px;
+    color: #8992a3
+}
+
+.table-wrap {
+    background: white;
+    border: 1px solid #e9ecf1;
+    border-radius: 10px;
+    overflow: auto
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 760px
+}
+
+th {
+    text-align: left;
+    padding: 15px 17px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #8992a3;
+    background: #fafbfc;
+    cursor: pointer
+}
+
+td {
+    white-space: nowrap;
+    padding: 14px 17px;
+    border-top: 1px solid #eff1f4;
+    font-size: 11px;
+    color: #687286
+}
+
+.person-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.person-cell a {
+    display: block;
+    color: #27334d;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px
+}
+
+.person-cell small {
+    display: block;
+    color: #9aa2b0;
+    margin-top: 4px;
+    font-size: 10px
+}
+
+.person-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #edf0ff;
+    color: #5968ca;
+    display: grid;
+    place-items: center;
+    font-size: 10px
+}
+
+.status {
+    padding: 5px 8px;
+    border-radius: 20px;
+    background: #f1f2f5;
+    color: #747e90;
+    font-size: 9px
+}
+
+.status.active {
+    background: #e7f7ef;
+    color: #26875b
+}
+
+.status.invited {
+    background: #fff5df;
+    color: #ad7b1d
+}
+
+.edit-button,
+.secondary-button {
+    border: 1px solid #e4e7ed;
+    background: #fff;
+    border-radius: 6px;
+    padding: 7px 11px;
+    font-size: 10px;
+    color: #586277;
+    cursor: pointer
+}
+
+.empty,
+.loading,
+.message {
+    padding: 24px;
+    text-align: center;
+    color: #8a93a3;
+    font-size: 12px
+}
+
+.edit-panel {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #10182b66;
+    align-items: center;
+    justify-content: center;
+    z-index: 5
+}
+
+.edit-panel.visible {
+    display: flex
+}
+
+.edit-card {
+    background: #fff;
+    width: 390px;
+    max-width: 90vw;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 15px 50px #10182b33
+}
+
+.edit-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px
+}
+
+.edit-title h3 {
+    margin: 0
+}
+
+.edit-title button {
+    border: 0;
+    background: none
+}
+
+.edit-card label {
+    display: block;
+    font-size: 11px;
+    color: #667085;
+    margin: 13px 0
+}
+
+.edit-card input,
+.edit-card select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 6px;
+    padding: 10px;
+    border: 1px solid #e1e5ec;
+    border-radius: 6px
+}
+
+.edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 22px
+}
+
+@media(max-width:600px) {
+    .toolbar {
+        flex-wrap: wrap
+    }
+
+    .search-wrap {
+        max-width: none;
+        flex-basis: 100%
+    }
+
+    .page-heading {
+        gap: 12px;
+        align-items: flex-start
+    }
+}

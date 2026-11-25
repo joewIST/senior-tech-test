@@ -1,0 +1,158 @@
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px
+}
+
+.page-heading h2 {
+    font-size: 23px;
+    margin: 0 0 6px
+}
+
+.page-heading p,
+.panel-heading p {
+    margin: 0;
+    color: #8992a3;
+    font-size: 13px
+}
+
+.date-pill {
+    background: #fff;
+    border: 1px solid #e8ebf0;
+    padding: 10px 13px;
+    border-radius: 7px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #697386
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px
+}
+
+.stat-card,
+.panel {
+    background: #fff;
+    border: 1px solid #e9ecf1;
+    border-radius: 11px;
+    padding: 21px
+}
+
+.stat-card span {
+    display: block;
+    color: #737d90;
+    font-size: 12px
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 30px;
+    margin: 12px 0 4px
+}
+
+.stat-card small {
+    color: #9aa2b0;
+    font-size: 11px
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px
+}
+
+.panel-heading {
+    margin-bottom: 22px
+}
+
+.panel-heading h3 {
+    font-size: 15px;
+    margin: 0 0 5px
+}
+
+.department-row {
+    margin: 18px 0
+}
+
+.department-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 8px
+}
+
+.bar {
+    height: 7px;
+    background: #f0f1f6;
+    border-radius: 5px
+}
+
+.bar i {
+    display: block;
+    background: #7785ed;
+    height: 7px;
+    border-radius: 5px
+}
+
+.activity-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f1f4
+}
+
+.mini-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #edf0ff;
+    color: #5968ca;
+    display: grid;
+    place-items: center;
+    font-size: 10px;
+    margin-right: 11px
+}
+
+.activity-person {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.activity-person strong {
+    font-size: 12px
+}
+
+.activity-person small,
+.activity-row time {
+    font-size: 10px;
+    color: #929aaa
+}
+
+.activity-row time {
+    margin-left: auto
+}
+
+.notice {
+    margin-top: 15px;
+    color: #737d90;
+    font-size: 12px
+}
+
+.error {
+    color: #c44
+}
+
+@media(max-width:900px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr
+    }
+}

@@ -1,0 +1,18 @@
+<div class="page-heading"><div><h2>Good morning, Jordan</h2><p>Here's what's happening with your team today.</p></div><span class="date-pill">MONDAY, 22 JUNE 2026</span></div>
+<div class="stats-grid">
+  <article class="stat-card"><span>Total people</span><strong>{{ users.length }}</strong><small>Across your workspace</small></article>
+  <article class="stat-card"><span>Active people</span><strong>{{ activeUsers.length }}</strong><small>
+{{ getPercentage(activeUsers.length) }}% of your team</small></article>
+  <article class="stat-card"><span>Departments</span><strong>{{ departmentCount }}</strong><small>Across the organisation</small></article>
+  <article class="stat-card"><span>Pending invites</span><strong>{{ pendingInvites }}</strong><small>Awaiting response</small></article>
+</div>
+<div class="content-grid">
+  <section class="panel"><div class="panel-heading"><div><h3>People by department</h3><p>Team distribution</p></div></div>
+    <div class="department-row" 
+*ngFor="let department of departments"><div class="department-label"><span>{{ department }}</span><strong>{{ getDepartmentUsers(department) }}</strong></div><div class="bar"><i [style.width.%]="getPercentage(getDepartmentUsers(department))"></i></div></div>
+  </section>
+  <section class="panel"><div class="panel-heading"><div><h3>Recently active</h3><p>Latest team activity</p></div></div>
+    <div class="activity-row" *ngFor="let user of activeUsers.slice(0,5)"><span class="mini-avatar">{{ user.firstName[0] }}{{ user.lastName[0] }}</span><div class="activity-person"><strong>{{ user.firstName }} {{ user.lastName }}</strong><small>{{ user.role }}</small></div><time>{{ user.lastActive }}</time></div>
+  </section>
+</div>
+<div *ngIf="loading" class="notice">Loading dashboard…</div><div *ngIf="errorMessage" class="notice error">{{ errorMessage }}</div>

@@ -1,0 +1,156 @@
+.back-row {
+    margin-bottom: 18px
+}
+
+.back-row a {
+    font-size: 12px;
+    color: #69758a;
+    text-decoration: none
+}
+
+.detail-panel {
+    background: #fff;
+    border: 1px solid #e9ecf1;
+    border-radius: 11px;
+    padding: 28px
+}
+
+.profile-head {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #edf0f4
+}
+
+.large-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #edf0ff;
+    color: #5968ca;
+    font-size: 18px
+}
+
+.profile-title {
+    flex: 1
+}
+
+.profile-title h2 {
+    margin: 0 0 5px;
+    font-size: 21px
+}
+
+.profile-title p {
+    margin: 0 0 9px;
+    color: #8a93a3;
+    font-size: 12px
+}
+
+.status {
+    font-size: 10px;
+    color: #25865b;
+    background: #e7f7ef;
+    border-radius: 20px;
+    padding: 5px 9px
+}
+
+.primary-button {
+    border: 0;
+    background: #5969d8;
+    color: #fff;
+    border-radius: 7px;
+    padding: 11px 16px;
+    font-size: 12px;
+    cursor: pointer
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    padding: 25px 0
+}
+
+.detail-grid h3,
+.inline-edit h3 {
+    font-size: 14px;
+    margin: 0 0 20px
+}
+
+.field {
+    margin: 17px 0
+}
+
+.field small {
+    display: block;
+    color: #929aaa;
+    font-size: 10px;
+    margin-bottom: 6px
+}
+
+.field strong {
+    font-size: 12px;
+    font-weight: 500;
+    color: #354057
+}
+
+.bio {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #647087
+}
+
+.inline-edit {
+    border-top: 1px solid #edf0f4;
+    padding-top: 22px
+}
+
+.inline-edit label {
+    display: block;
+    font-size: 11px;
+    margin: 12px 0
+}
+
+.inline-edit input,
+.inline-edit textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #e1e5ec;
+    border-radius: 6px;
+    margin-top: 5px
+}
+
+.inline-edit textarea {
+    min-height: 80px
+}
+
+@media(max-width:650px) {
+    .profile-head {
+        flex-wrap: nowrap;
+        align-items: flex-start
+    }
+
+    .profile-head button {
+        margin-left: 0;
+        white-space: nowrap;
+        padding: 9px 10px
+    }
+
+    .profile-title {
+        min-width: 0
+    }
+
+    .profile-title h2 {
+        overflow-wrap: anywhere
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 15px
+    }
+}

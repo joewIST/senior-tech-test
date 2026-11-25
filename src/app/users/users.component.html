@@ -1,0 +1,64 @@
+<div class="page-heading">
+    <div>
+        <h2>People</h2>
+        <p>Manage the people in your workspace.</p>
+    </div><button class="primary-button" (click)="message='Invitations are coming soon'">＋ Invite people</button>
+</div>
+<div class="toolbar">
+    <div class="search-wrap"><span>⌕</span>
+        <input #searchBox type="text" placeholder="Search people..." (input)="onSearch(searchBox.value)">
+    </div><select [(ngModel)]="selectedStatus" (change)="statusChanged()">
+        <option>All statuses</option>
+        <option>Active</option>
+        <option>Invited</option>
+        <option>Inactive</option>
+    </select><span class="result-count">{{ filteredUsers.length }} people</span>
+</div>
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th (click)="sortBy('firstName')">PERSON ↕</th>
+                <th (click)="sortBy('role')">ROLE ↕</th>
+                <th (click)="sortBy('department')">DEPARTMENT ↕</th>
+                <th>STATUS</th>
+                <th (click)="sortBy('joined')">JOINED ↕</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of filteredUsers">
+                <td>
+                    <div class="person-cell"><span class="person-avatar">{{ getInitials(user) }}</span>
+                        <div><a [routerLink]="['/users',user.id]">{{ user.firstName }} {{ user.lastName }}</a><small>{{
+                                user.email }}</small></div>
+                    </div>
+                </td>
+                <td>{{ user.role }}</td>
+                <td>{{ user.department }}</td>
+                <td><span class="status" [class.active]="user.status==='Active'"
+                        [class.invited]="user.status==='Invited'">{{ user.status }}</span></td>
+                <td>{{ user.joined | date:'d MMM yyyy' }}</td>
+                <td><button class="edit-button" (click)="openEditor(user)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="filteredUsers.length===0" class="empty">No people match your search.</div>
+</div>
+<div *ngIf="loading" class="loading">Loading people…</div>
+<div *ngIf="message" class="message">{{ message }}</div>
+<div class="edit-panel">
+    <div class="edit-card" *ngIf="editingUser">
+        <div class="edit-title">
+            <h3>Edit person</h3><button (click)="closeEditor()">✕</button>
+        </div><label>First name<input [(ngModel)]="editingUser.firstName"></label><label>Last name<input
+                [(ngModel)]="editingUser.lastName"></label><label>Role<input
+                [(ngModel)]="editingUser.role"></label><label>Status<select [(ngModel)]="editingUser.status">
+                <option>Active</option>
+                <option>Invited</option>
+                <option>Inactive</option>
+            </select></label>
+        <div class="edit-actions"><button class="secondary-button" (click)="closeEditor()">Cancel</button><button
+                class="primary-button" (click)="saveUser()">Save changes</button></div>
+    </div>
+</div>

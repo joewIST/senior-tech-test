@@ -1,0 +1,32 @@
+<div class="back-row"><a routerLink="/users">← Back to people</a></div>
+<div *ngIf="loading" class="detail-panel">Loading profile…</div>
+<div *ngIf="!loading && user" class="detail-panel">
+  <div class="profile-head">
+    <div class="large-avatar">{{ user.firstName[0] }}{{ user.lastName[0] }}</div>
+    <div class="profile-title">
+      <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+      <p>{{ user.role }} · {{ user.department }}</p><span class="status">{{ user.status }}</span>
+    </div><button class="primary-button" (click)="editing=!editing">{{ editing ? 'Close edit' : 'Edit profile'
+      }}</button>
+  </div>
+  <div class="detail-grid">
+    <section>
+      <h3>Contact information</h3>
+      <div class="field"><small>Email address</small><strong>{{ user.email }}</strong></div>
+      <div class="field"><small>Location</small><strong>{{ user.location }}</strong></div>
+      <div class="field"><small>Joined</small><strong>{{ user.joined | date:'d MMMM yyyy' }}</strong></div>
+    </section>
+    <section>
+      <h3>About</h3>
+      <div class="bio" [innerHTML]="trustedBio"></div>
+      <div class="field"><small>Last active</small><strong>{{ user.lastActive }}</strong></div>
+    </section>
+  </div>
+  <form *ngIf="editing" class="inline-edit" [formGroup]="profileForm" (ngSubmit)="save()">
+    <h3>Quick edit</h3>
+    <label>Role<input formControlName="role" required></label>
+    <label>Bio<textarea formControlName="bio"></textarea></label>
+    <button class="primary-button" type="submit" [disabled]="profileForm.invalid">Save profile</button>
+  </form>
+</div>
+<div *ngIf="!loading && !user" class="detail-panel">Person not found.</div>
